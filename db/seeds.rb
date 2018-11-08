@@ -21,7 +21,8 @@ ingredients = ingredients["drinks"]
 
 ingredients.each do |ingredient|
   Ingredient.create!(
-    name: ingredient.values
+    name: ingredient.values[0]
   )
 end
-
+puts Ingredient.last.name
+puts 'Finished!'

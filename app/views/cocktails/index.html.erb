@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="container">
+
+    <h1>Fancy Cocktails</h1>
+
+    <div id="cards-container">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card">
+          <h2><%= link_to (cocktail.name), cocktail_path(cocktail), class: 'link-unstyled' %></h2>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
