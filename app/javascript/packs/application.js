@@ -1,4 +1,4 @@
 import 'bootstrap';
 
-import { methodname } from '../components/modal';
-methodname();
+import { initAddDoseOnClick } from '../components/modal';
+initAddDoseOnClick();

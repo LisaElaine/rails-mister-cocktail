@@ -24,5 +24,13 @@ ingredients.each do |ingredient|
     name: ingredient.values[0]
   )
 end
-puts Ingredient.last.name
+
+cocktails = ['Old Fashioned', 'Margarita', 'Dry Martini', 'Negroni', 'Daquiri', 'Manhattan', 'Whiskey Sour', 'Bloody Mary', 'Moscow Mule', 'Aperol Spritz']
+cocktails.each do |cocktail|
+  Cocktail.create!(
+    name: cocktail
+  )
+end
+
 puts 'Finished!'
+

@@ -1,16 +1,46 @@
 <div class="wrapper">
   <div class="container">
-
     <h1>Fancy Cocktails</h1>
+    <div class="cards-container">
 
-    <div id="cards-container">
-      <% @cocktails.each do |cocktail| %>
-        <div class="card">
-          <h2><%= link_to (cocktail.name), cocktail_path(cocktail), class: 'link-unstyled' %></h2>
+
+      <div class="cards">
+        <div class="row">
+        <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('#');">
+              <% if cocktail.ratings %>
+                <% if cocktail.ratings.count > 10 %>
+                  <div class="card-popular"><p> POPULAR</p></div>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="card-footer">
+              <div class="card-info">
+                <p><%= cocktail.name %></p>
+              </div>
+              <div class="card-rating">
+                <p><%= cocktail.average_rating %></p>
+                <!-- <a href="#">
+                  <i class="fa fa-star"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-share"></i>
+                </a> -->
+              </div>
+            </div>
+            <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+          </div>
         </div>
-      <% end %>
+        <% end %>
+      </div>
+      </div>
+      <%= link_to "add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
     </div>
-    <%= link_to "add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
   </div>
 </div>
 

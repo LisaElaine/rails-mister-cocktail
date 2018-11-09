@@ -1,7 +1,16 @@
 
-document.ready(function() {
-  ('#add-btn').on('click', function() { ('#new-dose-form').submit(); });
-});
+// document.ready(function() {
+//   ('#add-btn').on('click', function() { ('#new-dose-form').submit(); });
+// });
 
 
-export {  };
+function initAddDoseOnClick() {
+  const form = document.querySelector('#new_dose');
+  if (form) {
+    document.querySelector('#add-btn').addEventListener('click', () => {
+      form.submit();
+    });
+  }
+}
+
+export { initAddDoseOnClick };

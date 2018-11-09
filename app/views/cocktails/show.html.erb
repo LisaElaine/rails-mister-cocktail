@@ -23,10 +23,9 @@
         <h4 class="modal-title" id="myModalLabel">Add Ingredient</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [@cocktail, @dose], :id => 'new-dose-form' do |f| %>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
           <%= f.input :description %>
           <%= f.association :ingredient %>
-
         <% end %>
       </div>
       <div class="modal-footer">
