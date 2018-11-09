@@ -7,8 +7,8 @@
 
 .card {
   margin: 10px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 
@@ -17,7 +17,8 @@
 }
 
 .card-body {
-  height: 170px;
+  height: 200px;
+  border-radius: 10px 10px 0px 0px;
   background-size: cover;
   color: white;
   position: relative;
@@ -53,6 +54,7 @@
 }
 
 .card-footer {
+  height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
