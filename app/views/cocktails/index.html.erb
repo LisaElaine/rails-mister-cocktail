@@ -1,6 +1,6 @@
+<%= render 'shared/banner' %>
 <div class="wrapper">
   <div class="container">
-    <h1>Fancy Cocktails</h1>
     <div class="cards-container">
 
 
@@ -9,7 +9,7 @@
         <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('#');">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 400, width: 300, crop: :fill, gravity: :center; %>');">
               <% if cocktail.ratings %>
                 <% if cocktail.ratings.count > 10 %>
                   <div class="card-popular"><p> POPULAR</p></div>
@@ -21,7 +21,7 @@
                 <p><%= cocktail.name %></p>
               </div>
               <div class="card-rating">
-                <p><%= cocktail.average_rating %></p>
+               <!--  <p><%= cocktail.average_rating %></p> -->
                 <!-- <a href="#">
                   <i class="fa fa-star"></i>
                 </a>
@@ -39,7 +39,7 @@
         <% end %>
       </div>
       </div>
-      <%= link_to "add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+
     </div>
   </div>
 </div>

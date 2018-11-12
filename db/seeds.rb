@@ -32,7 +32,6 @@ cocktails = [
   { name: "FIGURATI: A LAMBRUSCO COCKTAIL", description: "This low-abv sipper was made for brunch." },
   { name: "BRANDY COCKTAIL: THE WORLD, REVERSED", description: "A unique combo of brandy, Branca Menta and amaro." },
   { name: "IRISH WHISKEY COCKTAIL: ROAD TO TRALEE", description: "Warm up with whiskey, banana liqueur and bitters." },
-  { name: "DEAD RABBIT’S REAL IRISH PUNCH", description: "Perfect for your next fall gathering. " },
   { name: "DEATH & CO.’S IDEAL MARTINI RECIPE", description: "From the beautiful new book, Cocktail Codex." },
   { name: "CORPSE REVIVER #2", description: "A classic cocktail with a name that could wake the dead." },
   { name: "TEA COCKTAIL: SING LIKE A BEE", description: "Earl Grey-infused gin pairs perfectly with honey and citrus." },
@@ -43,6 +42,24 @@ cocktails = [
 
 Cocktail.create(cocktails)
 
+images = [
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796309/cocktails/adam-jaime-119565-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796292/cocktails/victoria-shes-1057274-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796304/cocktails/vitchakorn-koonyosying-527276-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541804360/cocktails/kyryll-ushakov-1057521-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796274/cocktails/rawpixel-610095-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796305/cocktails/vitchakorn-koonyosying-686009-unsplash.jpg',  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796299/cocktails/food-photographer-jennifer-pallian-306925-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796300/cocktails/rawpixel-743092-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796304/cocktails/rawpixel-735374-unsplash.jpg',
+  'https://res.cloudinary.com/dt1h4jpgd/image/upload/v1541796300/cocktails/marc-babin-625288-unsplash.jpg'
+]
+
+index = 0
+Cocktail.all.each do |cocktail|
+  cocktail.remote_photo_url = images[index]
+  cocktail.save
+  index += 1
+end
 
 puts 'Finished!'
 

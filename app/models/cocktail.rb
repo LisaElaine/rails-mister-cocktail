@@ -4,6 +4,8 @@ class Cocktail < ApplicationRecord
   has_many :ratings, dependent: :destroy
   validates :name, presence: true, uniqueness: true
 
+  mount_uploader :photo, PhotoUploader
+
   def average_rating
     ratings = self.ratings
     avg = 0
